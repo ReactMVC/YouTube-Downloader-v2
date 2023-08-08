@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader</title>
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/dark.js"></script>
+</head>
+
+<body class="bg-gray-800 text-white">
+    <div class="container mx-auto px-4 py-8">
+        <div class="text-center">
+            <h1 class="text-3xl text-white font-bold mb-4 mt-2">YouTube Downloader</h1>
+        </div>
+        <form class="max-w-lg mx-auto" id="yt-form">
+            <div class="bg-gray-900 dark:bg-gray-800 text-white shadow-md rounded-lg px-4 py-4">
+                <div class="mb-4">
+                    <label class="block dark:text-gray-300 font-bold mb-2" for="url">
+                        Enter YouTube Video URL:
+                    </label>
+                    <input class="border rounded-lg py-2 px-3 text-gray-700 dark:text-gray-200 w-full" id="url"
+                        name="url" type="text" placeholder="https://www.youtube.com/watch?v=...">
+                </div>
+                <div class="flex justify-between">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
+                        type="submit">
+                        Download
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="loader"
+        class="fixed top-0 left-0 w-full h-full bg-gray-900 opacity-75 z-50 flex items-center justify-center">
+        <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-64 w-64"></div>
+    </div>
+
+    <div class="container mx-auto px-4 py-2 mb-2" id="result">
+        <div class="max-w-lg mx-auto">
+            <div
+                class="bg-gray-900 dark:bg-gray-800 text-white shadow-md border border-white mb-4 rounded-lg overflow-hidden">
+                <img id="thumbnail" class="w-full h-64 object-cover" alt="Video Cover">
+                <div class="py-4 px-6">
+                    <h2 class="font-bold mb-2" id="title">Video title</h2>
+                    <div class="mb-4">
+                        <p class="text-sm mb-2">Video Links:</p>
+                        <div class="flex justify-between" id="videos">
+
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-sm mb-2">Video Links ( With Proxy )</p>
+                        <div class="flex justify-between" id="proxy">
+
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-sm text-center mb-2">Audio Links:</p>
+                        <div class="flex justify-center flex-wrap gap-2" id="audios">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/App.js"></script>
+</body>
+
+</html>
